@@ -8,6 +8,9 @@
   <body>
     <h1>Pier's Vendor and Order Tracker </h1>
     <p>Welcome back Pier! Use this helpful splash page to navigate your order list. You can see your clients under "Vendors". Select to Add a Vendor, or view them all. </p>
-    <p>Button to Vendor Form will go here.</p>
+    <a href="/Orders/new">Add a new Order.</a>
+    <ul>
+      <li>@Model.Title : @Model.Description $@Model.Price  --- @Model.Date </li>
+    </ul>
   </body>
 </html>
