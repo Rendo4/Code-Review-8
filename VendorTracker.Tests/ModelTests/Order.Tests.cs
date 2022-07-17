@@ -24,7 +24,16 @@ namespace VendorTracker.Tests
     public void isOrderPropertyRead()
     {
       Order newOrder = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
-      Assert.AreEqual("10", newOrder.Price);
+      Assert.AreEqual(30, newOrder.Price);
+    }
+    /// Test Setter method goes here
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Orders> {};
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
