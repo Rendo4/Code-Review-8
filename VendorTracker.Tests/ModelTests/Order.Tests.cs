@@ -17,7 +17,14 @@ namespace VendorTracker.Tests
     public void OrderConstructor_CreatesIstanceOfOrder_Order()
     {
       Order newOrder = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
-      Assert.AreEqual(typeof(string), newOrder.GetType());
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+
+    [TestMethod]
+    public void isOrderPropertyRead()
+    {
+      Order newOrder = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
+      Assert.AreEqual("10", newOrder.Price);
     }
   }
 }
