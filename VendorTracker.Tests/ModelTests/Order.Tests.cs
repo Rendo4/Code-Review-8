@@ -6,12 +6,12 @@ using System;
 namespace VendorTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests :IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Order.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     [TestMethod]
     public void OrderConstructor_CreatesIstanceOfOrder_Order()
@@ -31,7 +31,7 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void GetAll_ReturnsEmptyList_OrderList()
     {
-      List<Order> newList = new List<Orders> {};
+      List<Order> newList = new List<Order> {};
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
