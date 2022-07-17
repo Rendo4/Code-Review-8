@@ -9,21 +9,7 @@ namespace VendorTracker.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      List<Order>allOrders = Order.GetAll();
-      return View(allOrders);
-    }
-
-    [HttpGet("orders/new")]
-    public ActionResult CreateForm()
-    {
       return View();
-    }
-
-    [HttpPost("/orders")]
-    public ActionResult Create(string title, string description, int price, string date)
-    {
-      Order myOrder = new Order(title, description, price, date);
-      return RedirectToAction("Index");
     }
 
   }
