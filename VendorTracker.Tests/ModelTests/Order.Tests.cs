@@ -35,5 +35,15 @@ namespace VendorTracker.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      Order newOrder1 = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
+      Order newOrder2 = new Order("August Order", "Regular monthly order", 30, "August 1st, 2022");
+      List<Order> newList = new List<Order> { newOrder1 };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
