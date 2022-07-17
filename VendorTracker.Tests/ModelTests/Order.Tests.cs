@@ -6,17 +6,18 @@ using System;
 namespace VendorTracker.Tests
 {
   [TestClass]
-  public class OrderTests : IDisposable
+  public class OrderTests
   {
+    // public void Dispose()
+    // {
+    //   Order.ClearAll();
+    // }
 
-    public void Dispose()
-    {
-      Order.ClearAll();
-    }
     [TestMethod]
     public void OrderConstructor_CreatesIstanceOfOrder_Order()
     {
-
+      Order newOrder = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
+      Assert.AreEqual(typeof(string), newOrder.GetType());
     }
   }
 }
