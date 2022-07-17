@@ -1,28 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
 using VendorTracker.Models;
+using System.Collections.Generic;
 
 namespace VendorTracker.Controllers
 {
   public class HomeController : Controller
   {
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Index()
     {
-      Order starterOrder = new Order("Add first Order to Vendor history", "", 0, "");
-      return View(starterOrder);
+      List<Order>allOrders = Order.GetAll();
+      return View(allOrders);
     }
 
-    [Route("orders/new")]
+    [HttpGet("orders/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
 
-    [Route("/orders")]
+    [HttpPost("/orders")]
     public ActionResult Create(string title, string description, int price, string date)
     {
       Order myOrder = new Order(title, description, price, date);
-      return View("Index", myOrder);
+      return RedirectToAction("Index");
     }
 
   }
