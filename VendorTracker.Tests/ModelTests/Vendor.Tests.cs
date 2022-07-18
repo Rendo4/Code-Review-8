@@ -64,12 +64,12 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void AddOrder_associatesOrderwithVendor_OrderList()
     {
-      Order newOrder1 = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
+      Order newOrder = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
       List<Order> newList = new List<Order> { newOrder };
       string name = "Costco";
       Vendor newVendor = new Vendor(name, "Test Description");
       newVendor.AddOrder(newOrder);
-      List<Order> result = newOrder.Orders;
+      List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
     }
   }
