@@ -11,7 +11,7 @@
 
 ## Description
 
-_Hello and thank you for viewing my 'Order Tracker' application! This project uses concepts learned in my early weeks of study C# at epicodus.It practices creating objects Orders and placing them inside another object called Vendors. This allows Pier our happy baker to keep track of all of his clients and the orders they have placed. We do this by also practicing MVC within C# to create a splash page and RESTful routing to easily navigate the application._
+_Hello and thank you for viewing my 'Order Tracker' application! This project uses concepts learned in my early weeks of study C# at epicodus. It practices creating objects Orders and placing them inside another object called Vendors. This allows Pier our happy baker to keep track of all of his clients and the orders they have placed. We do this by also practicing MVC within C# to create a splash page and RESTful routing to easily navigate the application._
 
  //Change all of this after Views are set////////////////
 | Bread Order | Pastry Order| Return value  |

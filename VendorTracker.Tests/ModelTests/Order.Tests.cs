@@ -26,7 +26,7 @@ namespace VendorTracker.Tests
       Order newOrder = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
       Assert.AreEqual(30, newOrder.Price);
     }
-    /// Test Setter method goes here
+    // Test Setter method goes here if added functionality to update an order.
 
     [TestMethod]
     public void GetAll_ReturnsEmptyList_OrderList()
@@ -41,9 +41,10 @@ namespace VendorTracker.Tests
     {
       Order newOrder1 = new Order("July Order","Regular monthly order", 30, "July 1st, 2022");
       Order newOrder2 = new Order("August Order", "Regular monthly order", 30, "August 1st, 2022");
-      List<Order> newList = new List<Order> { newOrder1 };
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    // Test Deleting method goes here if added to functionality to delete an Order from the list
   }
 }
