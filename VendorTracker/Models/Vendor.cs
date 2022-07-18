@@ -14,8 +14,14 @@ namespace VendorTracker.Models
     {
       Name = vendorName;
       Description = vendorDescription;
+      _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Order>{};
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
