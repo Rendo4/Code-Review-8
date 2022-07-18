@@ -47,7 +47,7 @@ namespace VendorTracker.Tests
       Vendor newVendor2 = new Vendor(name02, "Test Description");
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2};
       List<Vendor> result = Vendor.GetAll();
-      CollectionsAssert.AreEqual(newList, result);
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
