@@ -23,7 +23,8 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void GetName_ReturnsName_String()
     {
-      Vendor newVendor = new Cendor("test Vendor", "test Description");
+      string name = "test Vendor";
+      Vendor newVendor = new Vendor("test Vendor", "test Description");
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
     }
