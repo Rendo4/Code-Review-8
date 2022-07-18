@@ -12,6 +12,7 @@ namespace VendorTracker.Tests
     {
       Vendor.ClearAll();
     }
+
     [TestMethod]
     public void VendorConstructor_CreatesIstanceOfVendor_Vendor()
     {
@@ -27,6 +28,7 @@ namespace VendorTracker.Tests
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
     }
+    
     [TestMethod]
     public void GetId_ReturnsVendorId_Int()
     {
@@ -36,5 +38,16 @@ namespace VendorTracker.Tests
       Assert.AreEqual(1, result);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      string name01 = "Costco";
+      string name02 = "Fred Meyer";
+      Vendor newVendor1 = new Vendor(name01, "Test Description");
+      Vendor newVendor2 = new Vendor(name02, "Test Description");
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2};
+      List<Vendor> result = Vendor.GetAll();
+      CollectionsAssert.AreEqual(newList, result);
+    }
   }
 }
