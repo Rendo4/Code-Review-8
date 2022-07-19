@@ -6,24 +6,22 @@ namespace VendorTracker.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/orders")]
-    public ActionResult Index()
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
     {
-      List<Order> allOrders = Order.GetAll();
-      return View(allOrders);
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
     }
 
-    [HttpGet("/orders/new")]
-    public ActionResult CreateForm()
+    [HttpGet("vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
     {
-      return View();
-    }
-
-    [HttpPost("/orders")]
-    public ActionResult Create(string title, string description, int price, string date)
-    {
-      Order myOrder = new Order(title, description, price, date);
-      return RedirectToAction("Index");
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
     }
   }
 }
